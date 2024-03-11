@@ -1,0 +1,103 @@
+    - = Esecuzione
+        a = Attesa
+
+
+    ^   (y processo)
+    |                                                                                                      (SCENARIO 1)
+    |                                                                                                    [MONO-TASKING]
+  P4|                                  ---------aa 
+    |
+    |
+    |
+    |
+  P3|                               aa
+    |
+    |
+    |
+  P2|                 --------aaaa        
+    |
+    |
+  P1|-----------aaaa--
+    |
+    |
+    |__________________________________________________________________________________>
+    0  1  2  3  4  5  6   7  8   9  10  11 12 13 14 15 16 17 18 19 20           (tempo t)
+
+
+- = Esecuzione
+ a = Attesa
+
+
+    ^   (y processo)
+    |                                                                                                   (SCENARIO 2)
+    |                                                                                                   [MULTI-TASKING]
+  P4|                        -------------aaaaa
+    |
+    |
+    |
+    |
+  P3|                   ----
+    |
+    |
+    |
+  P2|         ------aaaa
+    |
+    |
+  P1|---------aaaaaa----
+    |
+    |
+    |__________________________________________________________________________________>
+     0  1  2  3  4  5  6   7  8   9  10 11 12 13 14 15 16 17 18 19 20                 (tempo t)
+
+
+- = Esecuzione
+a = Attesa
+
+
+
+
+    ^   (y processo)
+    |                                                                                               (SCENARIO 3)
+    |                                                                                               [TIME-SHARING]
+  P4|         --           --   --     --
+    |
+    |
+    |
+    |
+  P3|     --
+    |
+    |
+    |
+  P2|  --             --
+    |
+    |
+  P1|--            --       --      --       --
+    |
+    |
+    |__________________________________________________________________________________>
+    0  1  2  3  4  5  6   7  8   9  10 11 12 13 14 15 16 17 18 19 20                  (tempo t)
+
+
+
+Analisi degli scenari:
+
+
+-Scenario 1:
+Nello scenario 1 lo scheduling della cpu utilizza un approccio mono-tasking quindi esegue il processo o programma con eventuali tempi di attesa prima di poter liberare le risorse ad un altro processo in esecuzione.
+
+
+-Scenario 2:    
+Nello scenario 2 lo scheduling utilizza un approccio multi-tasking, quindi nel caso di quattro processi in esecuzione la schedule fa in modo che quando un processo è in attesa esegue un altro processo invece di attendere
+che il processo A liberi risore.
+
+
+-Scenario 3:
+Nello scenario lo scheduling utilizza un approccio time-sharing ovvero utilizza un unità di tempo chiamata quanti che fa in modo di dedicare un quanto ad ogni processo fino alla loro conclusione.
+
+Considerazione finale:
+L'approccio odierno delle attuali cpu alla gestione dei processi a cui allocare risorse non fa più utilizzo del mono-tasking in quanto altamente inefficente in quanto vista la mole di processi di un normale PC
+renderebbe ostica l'esecuzione dei programmi in quanto un utente dovrebbe attendere la fine di un processo per inziarne un altro, infatti le attuali schedule utilizzano un approccio multi-tasking o time-sharing.  
+
+
+
+
